@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <link rel="icon" href="images/fevicon.png" type="image/gif" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>muzti-order</title>
+
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- font awesome style -->
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+
+</head>
+
+<body class="sub_page">
+
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="index.html">
+            <span>
+            <img src="images/logotop.png"></span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav  ml-auto">
+              <li class="nav-item ">
+                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html"> About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="service.html">Services</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="price.html">Pricing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+            </ul><!--
+            <div class="quote_btn-container">
+              <form class="form-inline">
+                <button class="btn   nav_search-btn" type="submit">
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+              </form>
+              <a href="">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>
+                  Call : +01 123455678990
+                </span>
+              </a>
+            </div>-->
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+</div>
+
+<!-- contact section -->
+<section class="contact_section layout_padding-bottom">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          Contact Us
+        </h2>
+      </div>
+      <div class="row">
+        <div class="col-md-8 col-lg-6 mx-auto">
+          <div class="form_container">
+
+            <form action="" name="submit-to-google-sheet">
+              <div>
+                <input type="text" name="Name" placeholder="Your Name" />
+              </div>
+              <div>
+                <input type="email" name="Email" placeholder="Your Email" />
+              </div>
+              <div>
+                <input type="text" name="Phone number" placeholder="Your Phone" />
+              </div>
+              <div>
+                <input type="text" name="Message" class="message-box" placeholder="Message" />
+              </div>
+              <div>
+                <input type="file" accept="images/*" name="">
+    <img src="">
+    <script>
+        let url = "https://script.google.com/macros/s/AKfycbyxN1sZ3U4O9gub6VnY_OGddWmitCgVg7PmTRLBOKNyxiKrVTXzftiaA-VJorUWiXTDDA/exec";
+        let file = document.querySelector("input");
+        let img = document.querySelector("img");
+        file.addEventListener('change',()=>{
+            let fr = new FileReader();
+            fr.addEventListener('loadend',()=>{
+                let res = fr.result;
+                img.src=res;
+                let spt = res.split("base64,")[1];
+                //console.log(spt);
+                let obj = {
+                    base64:spt,
+                    type:file.files[0].type,
+                    name:file.files[0].name
+                }
+                fetch(url,{
+                    method:"POST",
+                    body:JSON.stringify(obj)
+                })
+                .then(r=>r.text())
+                .then(data=>console.log(data))
+
+            })
+            fr.readAsDataURL(file.files[0])
+        }) 
+    </script>
+              </div>
+              <div class="btn_box ">
+                <button>
+                  SEND
+                </button>
+              </div>
+            </form>
+            <span id="msg"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end contact section -->
+   <!-- footer section -->
+  <footer class="footer_section">
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span> All Rights Reserved By
+        <a href="https://html.design/">muzti (2024)</a>
+      </p>
+    </div>
+  </footer>
+  <!-- footer section -->
+
+  <!-- jQery -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <!-- bootstrap js -->
+  <script src="js/bootstrap.js"></script>
+  <!-- custom js -->
+  <script src="js/custom.js"></script>
+
+
+
+  <form name="submit-to-google-sheet"><!--
+  <input name="email" type="email" placeholder="Email" required>
+  <button type="submit">Send</button>-->
+</form>
+
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbylh67uG72VfRkU7HzgYrj_GdS2ZTw-xSBPf0wj5kzbBLUgVlWvTmKgck8NqtsGf9Hvqw/exec'
+  const form = document.forms['submit-to-google-sheet']
+  const msg = document.getElementById("msg")
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+        msg.innerHTML = "Message sent successfully"
+        setTimeout(function(){
+          msg.innerHTML = ""
+        },5000)
+        form.reset()
+      })
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+
+
+</body>
+</html>
